@@ -37,7 +37,6 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    /* Custom scrollbar */
     ::-webkit-scrollbar { width: 10px; height: 10px; }
     ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--accent), var(--accent-2)); border-radius: 12px; }
     ::-webkit-scrollbar-track { background: #05060a; }
@@ -45,66 +44,27 @@
     .neon {
       text-shadow: 0 0 6px rgba(250,204,21,0.18), 0 0 18px rgba(246,200,76,0.06);
     }
-
     .pixel-divider {
       height: 6px;
-      background-image: linear-gradient(90deg, rgba(250,204,21,0.06) 10%, transparent 10%),
-                        linear-gradient(90deg, rgba(250,204,21,0.03) 50%, transparent 50%);
+      background-image: linear-gradient(90deg, rgba(250,204,21,0.06) 10%, transparent 10%), linear-gradient(90deg, rgba(250,204,21,0.03) 50%, transparent 50%);
       background-size: 6px 6px, 18px 6px;
       border-radius: 4px;
     }
-
     .mobile-menu { transition: transform .28s cubic-bezier(.2,.9,.2,1), opacity .22s; transform-origin: top; }
     .brand-plate { font-family: "Press Start 2P", monospace; letter-spacing: 0.02em; }
-    .pixel-badge {
-      font-family: "Press Start 2P", monospace;
-      font-size: 10px;
-      padding: 6px 8px;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-    .card-glass {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.03);
-      backdrop-filter: blur(6px);
-    }
-
-    /* iframe sizing */
-    .game-frame {
-      width: 100%;
-      height: 600px;
-      border: 1px solid rgba(255,255,255,0.03);
-      border-radius: 8px;
-      background: #05060a;
-    }
-
-    /* header crest tweak */
-    .crest {
-      width: 40px;
-      height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      background: #111827;
-      border: 1px solid rgba(255,255,255,0.04);
-      box-shadow: inset 0 -6px 18px rgba(0,0,0,0.6), 0 6px 12px rgba(0,0,0,0.4);
-    }
-    .btn-ghost {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.03);
-      color: var(--muted);
-    }
+    .pixel-badge { font-family: "Press Start 2P", monospace; font-size: 10px; padding: 6px 8px; border-radius: 6px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); }
+    .card-glass { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
+    .game-frame { width: 100%; height: 600px; border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; background: #05060a; }
+    .crest { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: #111827; border: 1px solid rgba(255,255,255,0.04); box-shadow: inset 0 -6px 18px rgba(0,0,0,0.6), 0 6px 12px rgba(0,0,0,0.4); }
+    .btn-ghost { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.03); color: var(--muted); }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="sticky top-0 z-50 bg-[rgba(6,7,10,0.7)] backdrop-blur-sm border-b border-gray-800">
     <nav class="container mx-auto px-4 py-4 flex items-center justify-between" aria-label="Main navigation">
       <a href="#" class="flex items-center gap-3" aria-label="Save Point Home">
-        <!-- MINIMALIST QUILL-HEART CREST (Variant C) -->
         <div class="crest" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" role="img" aria-label="quill heart">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 21s-6.716-4.792-10-9.482C-.214 7.367 2.037 3 6 3a5.89 5.89 0 0 1 6 3 5.89 5.89 0 0 1 6-3c3.963 0 6.214 4.367 4 8.518C18.716 16.208 12 21 12 21z"/>
@@ -121,12 +81,44 @@
         </div>
       </a>
 
-      <!-- Desktop links -->
       <div class="hidden md:flex items-center space-x-6">
         <a href="#about" class="text-gray-300 hover:text-yellow-400 transition flex items-center gap-2"><i class="fa-solid fa-map text-sm"></i><span> Lore</span></a>
         <a href="#projects" class="text-gray-300 hover:text-yellow-400 transition flex items-center gap-2"><i class="fa-solid fa-gamepad text-sm"></i><span> Quests</span></a>
         <a href="#chronicles" class="text-gray-300 hover:text-yellow-400 transition flex items-center gap-2"><i class="fa-solid fa-book-open text-sm"></i><span> Chronicles</span></a>
         <a href="#char-sheet" class="text-gray-300 hover:text-yellow-400 transition flex items-center gap-2"><i class="fa-solid fa-person-rays text-sm"></i><span> Character Sheet</span></a>
       </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/mnt/data/Narrative Designer CV.pdf" class="hidden md:inline-flex items-center gap-2 px-3 py-2 pixel-badge text-gray-900 bg-yellow-400 hover:brightness-95 transition" aria-label="Download CV">
+          <i class="fa-solid fa-file-arrow-down"></i> CV
+        </a>
+
+        <button id="mobile-menu-btn" aria-label="Toggle menu" class="md:hidden text-gray-300 hover:text-yellow-400 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-menu md:hidden absolute w-full transform -translate-y-full opacity-0">
+      <div class="px-4 py-3 bg-[#071025] border-t border-gray-800">
+        <a href="#about" class="block py-2 text-gray-200 hover:text-yellow-400">🗺️ Lore</a>
+        <a href="#projects" class="block py-2 text-gray-200 hover:text-yellow-400">🎮 Quests</a>
+        <a href="#chronicles" class="block py-2 text-gray-200 hover:text-yellow-400">📖 Chronicles</a>
+        <a href="#char-sheet" class="block py-2 text-gray-200 hover:text-yellow-400">✏️ Character Sheet</a>
+        <a href="/mnt/data/Narrative Designer CV.pdf" class="block py-2 text-gray-200 hover:text-yellow-400">💾 CV</a>
+        <a href="mailto:Kelseyiffert5@gmail.com" class="block py-2 text-gray-200 hover:text-yellow-400">💬 Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="py-20 md:py-28 flex items-center min-h-[52vh]" data-aos="fade-up">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-4 inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.03)]">
+         
+
 
       <
